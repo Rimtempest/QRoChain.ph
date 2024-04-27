@@ -6,23 +6,31 @@
     <title>QRoChain</title>
     <style>
         body {
-    background-size: cover; /* Cover the entire background */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    height: 5000vh; /* Set the height of the body */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+            background-size: cover; 
+    background-repeat: no-repeat; 
+    height: auto; 
+    margin: 0; 
+    padding: 0; 
     align-items: left;
-    background-image: url('NEWBG.png.jpg'); /* Set the background image */
-    background-attachment: fixed; /* Make the background image fixed */
+    background-image: url('NEWBG.jpg'); 
+    background-attachment: fixed; 
     min-height:100vh;
-	place-items: center;
+    place-items: center;
+}
+#qrcode-container {
+    position: absolute;
+    right: -300px; 
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0; 
+    transition: all 0.5s ease-in-out; 
 }
 
         .centered-content {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Make the wrapper fill the viewport vertically */
+            height: 100vh; 
         }
 
         a:hover + .divs {
@@ -72,11 +80,11 @@
         }
 
         header nav img {
-            transition: transform 0.3s; /* Add transition for smooth scaling */
+            transition: transform 0.3s; 
         }
 
         header nav a:hover img {
-            transform: scale(1.5); /* Enlarge the image on hover */
+            transform: scale(1.5); 
         }
 
         footer {
@@ -94,8 +102,8 @@
         }
 
         #logo {
-            width: 100px; /* Adjust width as needed */
-            height: auto; /* To maintain aspect ratio */
+            width: 100px; 
+            height: auto; 
         }
 
         #title {
@@ -159,7 +167,7 @@
 
         button {
             font-family: 'Bubblegum Sans', cursive;
-            background-color: #00bcd4; /* Light blue */
+            background-color: #00bcd4; 
             color: #ffffff;
             border: 2px solid #000000;
             padding: 10px 20px;
@@ -174,7 +182,7 @@
         }
 
         button:hover {
-            background-color: #00e5ff; /* Lighter blue */
+            background-color: #00e5ff; 
             color: #000000;
         }
 
@@ -205,61 +213,38 @@
 
         form {
             margin-bottom: 20px;
-            margin-top: 50px; /* Adjusted margin-top */
+            margin-top: 50px; 
         }
 
         input[type="text"],
         textarea {
-            width: 70%; /* Reduced width */
+            width: 70%; 
             padding: 15px;
             margin-bottom: 15px;
             display: block;
-            margin: 0 auto; /* Centering */
+            margin: 0 auto; 
         }
 
         #submit-button {
-            background-color: #00bcd4; /* Light blue */
+            background-color: #00bcd4; 
             color: #ffffff;
             border: none;
             padding: 15px 30px;
             cursor: pointer;
             transition: background-color 0.3s, color 0.3s;
             display: block;
-            margin: 0 auto; /* Centering */
+            margin: 0 auto; 
             border-radius: 10px;
             text-transform: uppercase;
             font-size: 16px;
-            width: 70%; /* Reduced width */
+            width: 70%; 
         }
 
         #submit-button:hover {
-            background-color: #00e5ff; /* Lighter blue */
+            background-color: #00e5ff; 
             color: #000000;
         }
 
-        /* Theme Styles */
-        .dinosaur-theme {
-            background-color: #ffd700;
-            color: #333;
-            background-image: url('dinosaur_background.jpg');
-            background-size: cover;
-        }
-
-        .kuromi-theme {
-            background-color: #ffc0cb;
-            color: #333;
-            background-image: url('kuromi_background.jpg');
-            background-size: cover;
-        }
-
-        .pixel-theme {
-            background-color: #90ee90;
-            color: #333;
-            background-image: url('pixel_background.jpg');
-            background-size: cover;
-        }
-
-        /* Photo Animation */
         .animated-photo {
             width: 300px;
             height: auto;
@@ -285,7 +270,7 @@
             }
         }
 
-        /* Hidden content */
+
         .hidden-content {
             display: none;
             padding: 20px;
@@ -314,19 +299,19 @@
         nav #logo {
             width: 150px;
             height: auto;
-            transition: transform 0.3s; /* Add transition for smooth scaling */
+            transition: transform 0.3s; 
         }
 
         #pic {
             width: 450px;
             height: auto;
-            transition: transform 0.3s; /* Add transition for smooth scaling */
+            transition: transform 0.3s; 
         }
 
         #mv {
             width: 300px;
             height: auto;
-            transition: transform 0.3s; /* Add transition for smooth scaling */
+            transition: transform 0.3s; 
         }
 
         nav a {
@@ -365,7 +350,7 @@
         .image-container {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start; /* Align items at the start of the container */
+            align-items: flex-start;
             margin-top: 20px;
             align: left;
         }
@@ -374,7 +359,7 @@
         .vision-container {
             width: 45%;
             position: relative;
-            margin-bottom: 10px; /* Add margin between the containers */
+            margin-bottom: 10px; 
             margin-left: 10px;
             margin-right: 200px;
         }
@@ -415,8 +400,8 @@
         .vision-container {
             width: 45%;
             position: relative;
-            margin-bottom: 10px; /* Add margin between the containers */
-            margin-left: 50px; /* Adjusted margin-left */
+            margin-bottom: 10px; 
+            margin-left: 50px; 
             margin-right: 200px;
         }
 
@@ -424,9 +409,9 @@
         .vision-container {
             width: 45%;
             position: relative;
-            margin-bottom: 10px; /* Add margin between the containers */
-            margin-left: 100px; /* Align to the left */
-            margin-right: 110px; /* Add margin to the right */
+            margin-bottom: 10px;
+            margin-left: 100px; 
+            margin-right: 110px; 
         }
 
         .mission-container,
@@ -450,7 +435,7 @@
         }
         #title {
     font-size: 60px;
-    font-family: 'Super Comic', cursive; /* Change the font-family to Chubby Cheeks */
+    font-family: 'Super Comic', cursive; 
     color: #ffffff;
 }
 
@@ -462,18 +447,17 @@
 .about-container {
             position: relative;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
-            margin: 0 auto; /* Center the container */
-            width: 70%; /* Adjust width as needed */
+            background-color: rgba(255, 255, 255, 0.8); 
+            margin: 0 auto; 
+            width: 70%; 
         }
 
-        /* Container for Contact */
         .contact-container {
             position: relative;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
-            margin: 0 auto; /* Center the container */
-            width: 70%; /* Adjust width as needed */
+            background-color: rgba(255, 255, 255, 0.8); 
+            margin: 0 auto; 
+            width: 70%; 
         }
         .container {
     position: relative;
@@ -641,7 +625,7 @@
     position: fixed;
     transform: translateY(0%);
     top: 0;
-    left: 50%; /* Center the hearts horizontally */
+    left: 50%;
     animation: fall 3s ease-in infinite;
 }
 	
@@ -737,18 +721,18 @@ button:hover {
 .image-container-left {
     position: absolute;
     left: 10;
-    top: 50%; /* Center vertically */
+    top: 50%; 
     transform: translateY(-50%);
 }
 .image-container-left {
     position: relative;
-    z-index: 2; /* Ensure this is above other content */
+    z-index: 2; 
     left: -50px;
 }
 
 .container {
     position: relative;
-    z-index: 1; /* Ensure this is below other content */
+    z-index: 1;
 }
 
 #qrcode {
@@ -765,9 +749,33 @@ button:hover {
             opacity: 1;
         }
 
+        .container1 {
+    margin: 0 auto; 
+    max-width: 600px; 
+}
+
+.qr-animation {
+    animation-name: pulsate;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@latest/qrcode.min.js"></script>
 </head>
-<body background="NEWBG.png.jpg">
+<body background="NEWBG.jpg">
 <header>
     <nav>
        <div class="logo-container">
@@ -785,7 +793,7 @@ button:hover {
 <br>
 <br>
 <br>
-<!-- Hidden About Us Content -->
+
 <div class="about-container hidden-content" id="about-us-content">
     <h2>About Us</h2>
     <p>This is a brief description about our company...QRoChain integrates state-of-the-art encryption protocols to safeguard user data, ensuring each message exchange is not only convenient but also highly secure. With our commitment to advancing digital communication, QRoChain sets new standards for user privacy and technological innovation in the realm of personalized messaging. Experience the seamless fusion of modern convenience and robust security with QRoChain's QR code keychains, redefining how we connect in the digital age.</p>
@@ -793,7 +801,6 @@ button:hover {
     <button onclick="hideContent('about-us-content')">Close</button>
 </div>
 
-<!-- Contact Content Container -->
 <div class="contact-container hidden-content" id="contact-content">
     <h2>Contact</h2>
     <p>For inquiries, please contact us at:</p>
@@ -851,11 +858,6 @@ button:hover {
         </div>
     </div>
 </div>
-<br>
-<br>
-<br>
-<br>
-
 <center>
     <div id="title-container">
     <h1 id="title">
@@ -871,54 +873,58 @@ button:hover {
 </div>
 </center>
 <br><br><br>
-<form id="message-form" class="cool-form">
+<form id="message-form" class="cool-form" onsubmit="lockText(event)">
+    <h1>Welcome To The QRoChain!!</h1>
+    <p>Please Enter Your Nickname And Your Message</p>
+    <br>
+    <p>-----NICKNAME-----</P>
     <div class="form-group animated-form">
-        <section id="welcome-message">
-            <h1>Welcome to QRoChain!</h1>
-        </section>
-        
-        <section id="theme-instructions">
-            <center>
-                <p>Choose a theme by clicking on one of the buttons above, then enter your nickname and a message below:</p>
-            </center>
-        </section>
-        <label for="nickname">Your Nickname:</label>
-        <input type="text" id="nickname" placeholder="Enter your nickname" required>
-    </div>
-    <div class="form-group animated-form">
-        <label for="message">Your Message:</label>
-        <textarea id="message" placeholder="Enter your message" required></textarea>
+        <input type="text" id="nicknameInput" placeholder="Enter your nickname" required>
+        <P>-----MESSAGE-----</P>
+        <textarea id="textInput" placeholder="Enter your message" required></textarea>
     </div>
     <button type="submit" id="submit-button">Submit</button>
+    <center>
+        <div class="qr-container">
+            <canvas id="qrCanvas" width="200" height="200"></canvas>
+        </div>
+        <button onclick="copyQRCode()">Copy QR Code</button>
+        <p style="color: rgb(0, 0, 0);">Scan the QR code to read the message.</p>
+    </center>
 </form>
+
+<div id="lockedText" style="display: none;"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrious"></script>
+<script src="script.js"></script>
+
 <div class="container"> 
     <div class="valentines"> 
         <div class="envelope"> 
             <div class="front"></div>
             <div class="card"> 
                 <div class="text"> 
-                    <!-- Message will be inserted here -->
                 </div>
                 <div class="heart"></div>
             </div>
         </div>
-        <div id="nickname-below-envelope"></div> <!-- This element will hold the nickname -->
+        <div id="nickname-below-envelope"></div> 
     </div>
     </div>
-        <!-- Display the nickname at the bottom of the envelope -->
         <div class="nickname"></div>
     </div>
 </div>
-<div id="qrcode"></div>
+</div>
+</div>
 <script>
 
 function hearts() {
-    const container = document.body; // Change to document.body to cover the entire page
+    const container = document.body; 
     const creat = document.createElement('div');
     creat.classList.add('hearts');
     creat.innerHTML = '🌸';
-    creat.style.left = Math.random() * window.innerWidth + 'px'; // Randomize horizontal position
-    creat.style.top = Math.random() * window.innerHeight + 'px'; // Randomize vertical position
+    creat.style.left = Math.random() * window.innerWidth + 'px'; 
+    creat.style.top = Math.random() * window.innerHeight + 'px'; 
     creat.style.animationDuration = Math.random() * 2 + 3 + 's';
     container.appendChild(creat);
     setTimeout(() => {
@@ -947,52 +953,82 @@ setInterval(hearts, 100);
     }
 
     function changeTheme(theme) {
-        // Remove existing theme class
         document.body.classList.remove('dinosaur-theme', 'kuromi-theme', 'pixel-theme');
-        // Add the new theme class
         document.body.classList.add(theme + "-theme");
     }
 
+    let lockedText = '';
 
-document.getElementById('message-form').addEventListener('submit', function(event) {
+function lockText(event) {
     event.preventDefault();
-    var nickname = document.getElementById('nickname').value;
-    var message = document.getElementById('message').value;
-    
-    // Update the text content of the card with the entered message
-    var cardText = document.querySelector('.card .text');
-    cardText.textContent = message;
 
-    // Update the nickname below the envelope
-    var nicknameElement = document.getElementById('nickname-below-envelope');
-    nicknameElement.textContent = "From: " + nickname;
+    const nickname = document.getElementById('nicknameInput').value.trim();
+    const input = document.getElementById('textInput');
+    const lockedDiv = document.getElementById('lockedText');
 
-    // Show the envelope and card
-    document.getElementById('message-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            var nickname = document.getElementById('nickname').value;
-            var message = document.getElementById('message').value;
-            
-            // Update the text content of the card with the entered message
-            var cardText = document.querySelector('.card .text');
-            cardText.textContent = message;
+    if (nickname !== '' && input.value.trim() !== '') {
+        lockedText += nickname + ': ' + input.value.trim() + '\n';
+        lockedDiv.innerText = lockedText;
+        input.value = '';
+        generateQRCode(lockedText);
+    }
+}
 
-            // Update the nickname below the envelope
-            var nicknameElement = document.getElementById('nickname-below-envelope');
-            nicknameElement.textContent = "From: " + nickname;
+function generateQRCode(text) {
+    const qrCanvas = document.getElementById('qrCanvas');
+    qrCanvas.innerHTML = '';
 
-            // Show the envelope and card
-            var envelope = document.querySelector('.envelope');
-            envelope.style.display = 'block';
-
-            // Generate QR code for the message
-            generateQRCode(message);
-
-    // Show the envelope and card
-    var envelope = document.querySelector('.envelope');
-    envelope.style.display = 'block';
+    const qr = new QRious({
+    element: qrCanvas,
+    value: text,
+    size: 200,
+    padding: 20,
+    backgroundAlpha: 1,
+    foreground: 'black',
 });
-});
+
+qrCanvas.classList.add('qr-animation');
+}
+
+function copyQRCode() {
+    const qrCanvas = document.getElementById('qrCanvas');
+    const tempCanvas = document.createElement('canvas');
+    tempCanvas.width = qrCanvas.width;
+    tempCanvas.height = qrCanvas.height;
+    const tempCtx = tempCanvas.getContext('2d');
+    tempCtx.drawImage(qrCanvas, 0, 0);
+    const dataURL = tempCanvas.toDataURL();
+    const tempInput = document.createElement('input');
+    tempInput.value = dataURL;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempInput);
+    alert('QR code copied!');
+}
+
+function lockText(event) {
+    event.preventDefault();
+
+    const nickname = document.getElementById('nicknameInput').value.trim();
+    const message = document.getElementById('textInput').value.trim();
+    const input = document.getElementById('textInput');
+    const lockedDiv = document.getElementById('lockedText');
+
+    if (nickname !== '' && message !== '') {
+        const messageContainer = document.querySelector('.card .text');
+        messageContainer.textContent = message;
+
+        const nicknameContainer = document.getElementById('nickname-below-envelope');
+        nicknameContainer.textContent = `From: ${nickname}`;
+
+        lockedText += `${nickname}: ${message}\n`;
+        lockedDiv.innerText = lockedText;
+        input.value = '';
+        generateQRCode(lockedText);
+    }
+}
+
 </script>
 <footer>
     <p>&copy; 2024 QRoChain. All rights reserved.</p>
