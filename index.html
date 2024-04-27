@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QRoChain</title>
+    <style>
+        body {
+    background-size: cover; /* Cover the entire background */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    height: 5000vh; /* Set the height of the body */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    align-items: left;
+    background-image: url('NEWBG.png.jpg'); /* Set the background image */
+    background-attachment: fixed; /* Make the background image fixed */
+    min-height:100vh;
+	place-items: center;
+}
+
+        .centered-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Make the wrapper fill the viewport vertically */
+        }
+
+        a:hover + .divs {
+            display: block;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        header a::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: all 0.3s ease-in-out;
+        }
+
+        header a:hover::before {
+            visibility: visible;
+            transform: scaleX(1);
+        }
+
+        header nav img {
+            transition: transform 0.3s; /* Add transition for smooth scaling */
+        }
+
+        header nav a:hover img {
+            transform: scale(1.5); /* Enlarge the image on hover */
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        #logo {
+            width: 100px; /* Adjust width as needed */
+            height: auto; /* To maintain aspect ratio */
+        }
+
+        #title {
+            font-size: 60px;
+            font-family: 'Bubblegum Sans', cursive;
+            color: #ffffff;
+        }
+
+        .letter {
+            display: inline-block;
+            animation: bounce 1s infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+                color: #ff4081;
+            }
+            100% {
+                transform: translateY(-5px);
+                color: #00bcd4;
+            }
+        }
+
+        .letter:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .letter:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .letter:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .letter:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        .letter:nth-child(5) {
+            animation-delay: 0.4s;
+        }
+
+        .letter:nth-child(6) {
+            animation-delay: 0.5s;
+        }
+
+        .letter:nth-child(7) {
+            animation-delay: 0.6s;
+        }
+
+        .letter:nth-child(8) {
+            animation-delay: 0.7s;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            font-family: 'Bubblegum Sans', cursive;
+            background-color: #00bcd4; /* Light blue */
+            color: #ffffff;
+            border: 2px solid #000000;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 10px;
+            text-transform: uppercase;
+            font-size: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button:hover {
+            background-color: #00e5ff; /* Lighter blue */
+            color: #000000;
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+            border-radius: 50%;
+            z-index: 0;
+            transform: translate(-50%, -50%);
+        }
+
+        button:hover::before {
+            width: 0;
+            height: 0;
+        }
+
+        #welcome-message {
+            margin: 20px auto;
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 20px;
+            margin-top: 50px; /* Adjusted margin-top */
+        }
+
+        input[type="text"],
+        textarea {
+            width: 70%; /* Reduced width */
+            padding: 15px;
+            margin-bottom: 15px;
+            display: block;
+            margin: 0 auto; /* Centering */
+        }
+
+        #submit-button {
+            background-color: #00bcd4; /* Light blue */
+            color: #ffffff;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            display: block;
+            margin: 0 auto; /* Centering */
+            border-radius: 10px;
+            text-transform: uppercase;
+            font-size: 16px;
+            width: 70%; /* Reduced width */
+        }
+
+        #submit-button:hover {
+            background-color: #00e5ff; /* Lighter blue */
+            color: #000000;
+        }
+
+        /* Theme Styles */
+        .dinosaur-theme {
+            background-color: #ffd700;
+            color: #333;
+            background-image: url('dinosaur_background.jpg');
+            background-size: cover;
+        }
+
+        .kuromi-theme {
+            background-color: #ffc0cb;
+            color: #333;
+            background-image: url('kuromi_background.jpg');
+            background-size: cover;
+        }
+
+        .pixel-theme {
+            background-color: #90ee90;
+            color: #333;
+            background-image: url('pixel_background.jpg');
+            background-size: cover;
+        }
+
+        /* Photo Animation */
+        .animated-photo {
+            width: 300px;
+            height: auto;
+            margin: 20px auto;
+            animation: glow 2s infinite alternate, breathe 3s infinite;
+        }
+
+        @keyframes glow {
+            0% {
+                filter: drop-shadow(0 0 10px #0000FF);
+            }
+            100% {
+                filter: drop-shadow(0 0 20px #0000FF);
+            }
+        }
+
+        @keyframes breathe {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Hidden content */
+        .hidden-content {
+            display: none;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+
+        .hidden-content p {
+            margin: 0;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 98%;
+            background-color: #333;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        nav #logo {
+            width: 150px;
+            height: auto;
+            transition: transform 0.3s; /* Add transition for smooth scaling */
+        }
+
+        #pic {
+            width: 450px;
+            height: auto;
+            transition: transform 0.3s; /* Add transition for smooth scaling */
+        }
+
+        #mv {
+            width: 300px;
+            height: auto;
+            transition: transform 0.3s; /* Add transition for smooth scaling */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: all 0.3s ease-in-out;
+        }
+
+        nav a:hover::before {
+            visibility: visible;
+            transform: scaleX(1);
+        }
+
+        .container {
+            position: relative;
+            margin-top: 20px;
+            text-align: center;
+            length: 500px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start; /* Align items at the start of the container */
+            margin-top: 20px;
+            align: left;
+        }
+
+        .mission-container,
+        .vision-container {
+            width: 45%;
+            position: relative;
+            margin-bottom: 10px; /* Add margin between the containers */
+            margin-left: 10px;
+            margin-right: 200px;
+        }
+
+        .mission-container img,
+        .vision-container img {
+            width: 300px;
+            height: auto;
+            vertical-align: top;
+            cursor: pointer;
+            transition: transform 0.3s;
+            align: left;
+        }
+
+        .mission-container img:hover,
+        .vision-container img:hover {
+            transform: scale(1.5);
+        }
+
+        .divs {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: lightgray;
+            padding: 40px;
+            font-style: oblique;
+            display: none;
+            width: 90%;
+            text-align: left;
+        }
+
+        .mission-container:hover .divs,
+        .vision-container:hover .divs {
+            display: block;
+        }
+
+        .vision-container {
+            width: 45%;
+            position: relative;
+            margin-bottom: 10px; /* Add margin between the containers */
+            margin-left: 50px; /* Adjusted margin-left */
+            margin-right: 200px;
+        }
+
+        .mission-container,
+        .vision-container {
+            width: 45%;
+            position: relative;
+            margin-bottom: 10px; /* Add margin between the containers */
+            margin-left: 100px; /* Align to the left */
+            margin-right: 110px; /* Add margin to the right */
+        }
+
+        .mission-container,
+        .vision-container {
+            width: 300px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .divs {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: lightgray;
+            padding: 40px;
+            font-style: oblique;
+            display: none;
+            width: 90%;
+            text-align: left;
+        }
+        #title {
+    font-size: 60px;
+    font-family: 'Super Comic', cursive; /* Change the font-family to Chubby Cheeks */
+    color: #ffffff;
+}
+
+#title-container {
+    background-color: lightgrey;
+    padding: 10px;
+    text-align: center;
+}
+.about-container {
+            position: relative;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            margin: 0 auto; /* Center the container */
+            width: 70%; /* Adjust width as needed */
+        }
+
+        /* Container for Contact */
+        .contact-container {
+            position: relative;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            margin: 0 auto; /* Center the container */
+            width: 70%; /* Adjust width as needed */
+        }
+        .container {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+	
+	.valentines {
+		position: relative;
+		top: 90px;
+		cursor: pointer;
+		animation: up 3s linear infinite;
+	}
+	
+	.envelope{
+		position: relative;
+		width: 450px;
+		height: 350px;
+		background: #f08080;
+		display: grid;
+		align-items: center;
+		
+	}
+	
+	.envelope:before{
+		content: '';
+		position: absolute;
+		width: 317px;
+		height:319px;
+		background: #f08080;
+		transform: rotate(45deg);
+		top: -158px;
+		left: 66px;
+		border-radius: 30px 0 0 0;
+        align-items: center;
+	}
+	
+	.front{
+		position: absolute;
+		border-right: 330px solid #f4978e;
+		border-top: 245px solid transparent;
+		border-bottom: 100px solid transparent;
+		left: 120px;
+		top: 5px;
+		width: 0;
+		height: 0;
+		z-index: 10;
+	}
+	
+	.front:before{
+		position: absolute;
+		content: '';
+		border-left: 450px solid #fda996;
+		border-top: 345px solid transparent;
+		left: -120px;
+		top:-245px;
+	}
+	
+	.card {
+		position: relative;
+		width: 400px;
+		height: 350px;
+		background: white;
+		border-radius: 2px;
+		display: grid;
+		left: 25px;
+		place-items: center;
+		transition: 1s;
+	}
+	
+	.card:before{
+		content: '';
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		right: 10px;
+		bottom:10px;
+		border: 2px solid black;
+		border-style: dashed;
+        align-items: center;
+	}
+	
+	.valentines:hover .card{
+		transform: translateY(-100px);
+        align-items: center;
+	}
+	
+	.card .text {
+		font-family: 'Arial';
+		color: black;
+	}
+	
+	.card .heart {
+		position: relative;
+		width: 35px;
+		height: 35px;
+		background: red;
+		bottom: 30px;
+		transform:rotate(45deg);
+		border-radius: 50% 0 0 50%;
+		right: 15px;
+	}
+	
+	.card .heart:before {
+		content:'';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: red;
+		border-radius: 0 50% 50% 0;
+		right: 0;
+		transform: rotate(-90deg);
+		transform-origin: top;
+	}
+	
+	.card .heart:after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: red;
+		right: -18px;
+	}
+	
+	@keyframes up{
+		0%, 100% {
+			transform: translateY(0);
+		}
+		
+		50%{
+			transform: translateY(-30px);
+		}
+	
+	}
+	
+	.valentines:before{
+		content: '';
+		position: absolute;
+		width: 500px;
+		height: 25px;
+		border-radius: 50%;
+		background: rgba(0, 0, 0, .3);
+		top: 380px;
+		left: -25px;
+		animation: scale 3s linear infinite;
+	}
+	
+	@keyframes scale{
+		0%, 100% {
+			transform: scaleX(1);
+		}
+		
+		50% {
+			transform: scaleX(.85);
+		}
+	}
+	
+	.hearts {
+    font-size: 23px;
+    font-weight: bold;
+    position: fixed;
+    transform: translateY(0%);
+    top: 0;
+    left: 50%; /* Center the hearts horizontally */
+    animation: fall 3s ease-in infinite;
+}
+	
+	@keyframes fall {
+		to {
+			transform: translateY(250vh);
+		}
+    }
+
+    .cool-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    border: 2px solid #00bcd4;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    animation: slide-in 1s ease-out;
+}
+
+.animated-form {
+    opacity: 0;
+    animation: fade-in 1s forwards;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #00bcd4;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+button {
+    background-color: #00bcd4;
+    color: #ffffff;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #00e5ff;
+}
+.image-container-left {
+    position: absolute;
+    left: 10;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+}
+.image-container-left {
+    position: relative;
+    z-index: 2; /* Ensure this is above other content */
+    left: -50px;
+}
+
+.container {
+    position: relative;
+    z-index: 1; /* Ensure this is below other content */
+}
+
+#qrcode {
+            position: absolute;
+            right: -150px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .envelope:hover + #qrcode {
+            right: 0;
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body background="NEWBG.png.jpg">
+<header>
+    <nav>
+       <div class="logo-container">
+    <a href="#" onmouseover="document.getElementById('logo').style.transform = 'scale(1.5)'" onmouseout="document.getElementById('logo').style.transform = 'scale(1)'">
+        <img id="logo" src="Picsart_24-04-26_09-58-33-239.png" alt="Logo">
+    </a>
+</div>
+        <a href="#" onmouseover="showContent('about-us-content')" onmouseout="hideContent('about-us-content')">About Us</a>
+        <a href="#" onmouseover="showContent('contact-content')" onmouseout="hideContent('contact-content')">Contact</a>
+    </nav>
+</header>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!-- Hidden About Us Content -->
+<div class="about-container hidden-content" id="about-us-content">
+    <h2>About Us</h2>
+    <p>This is a brief description about our company...QRoChain integrates state-of-the-art encryption protocols to safeguard user data, ensuring each message exchange is not only convenient but also highly secure. With our commitment to advancing digital communication, QRoChain sets new standards for user privacy and technological innovation in the realm of personalized messaging. Experience the seamless fusion of modern convenience and robust security with QRoChain's QR code keychains, redefining how we connect in the digital age.</p>
+    <p>For more information, please visit our FB Page <a href="https://www.facebook.com/profile.php?id=61559021244202&mibextid=ZbWKwL">QRoChain</a>.</p>
+    <button onclick="hideContent('about-us-content')">Close</button>
+</div>
+
+<!-- Contact Content Container -->
+<div class="contact-container hidden-content" id="contact-content">
+    <h2>Contact</h2>
+    <p>For inquiries, please contact us at:</p>
+    <p>Email: 2022000321@lccm.edu.ph</p>
+    <p>Phone: 09085780379</p>
+    <button onclick="hideContent('contact-content')">Close</button>
+</div>
+
+<br><br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="animated-photo">
+    <div class="image-container-left">
+        <a onmouseover="document.getElementById('pic').style.transform = 'scale(1.5)'" onmouseout="document.getElementById('pic').style.transform = 'scale(1)'">
+            <img id="pic" src="Picsart_24-04-25_18-01-36-709.png" width="500px">
+        </a>
+    </div>    
+    <div class="container">
+        <div class="image-container">
+            <div class="mission-container">
+                <img id="mv" src="Picsart_24-04-26_10-01-57-888.png" width="300px">
+                <div class="divs">
+                    <li>Our Mission is to embark on a journey with us to foster love, kindness,
+                        and generosity through our innovative platform. Seamlessly connecting you
+                        with your loved ones, we strive to enhance relationships and strengthen 
+                        bonds. Our commitment extends beyond mere connection; we aim to provide
+                        unparalleled experiences and services to our valued customers. Through 
+                        empowering high-quality products that amplify personal expression, we pave
+                        the way for meaningful connections and unforgettable moments. Join us in
+                        embracing a world where love, connection, and empowerment thrive.</li>
+                </div>
+            </div>
+            <div class="vision-container">
+                <img src="Picsart_24-04-26_10-00-12-168.png" width="300px">
+                <div class="divs">
+                    <li>Our vision is to provide students with an innovative keychain that
+                        serves as a conduit for spreading love, kindness, and generosity. 
+                        With customizable messages tailored to uplift and inspire, our keychain 
+                        offers a unique opportunity for students to express themselves and 
+                        connect with others, all at an affordable price point. Join us in fostering 
+                        a culture of positivity and empowerment as we bring this vision to life, 
+                        one keychain at a time.
+                    </li>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+<center>
+    <div id="title-container">
+    <h1 id="title">
+        <span class="letter">Q</span>
+        <span class="letter">R</span>
+        <span class="letter">o</span>
+        <span class="letter">C</span>
+        <span class="letter">h</span>
+        <span class="letter">a</span>
+        <span class="letter">i</span>
+        <span class="letter">n</span>
+    </h1>
+</div>
+</center>
+<br><br><br>
+<form id="message-form" class="cool-form">
+    <div class="form-group animated-form">
+        <section id="welcome-message">
+            <h1>Welcome to QRoChain!</h1>
+        </section>
+        
+        <section id="theme-instructions">
+            <center>
+                <p>Choose a theme by clicking on one of the buttons above, then enter your nickname and a message below:</p>
+            </center>
+        </section>
+        <label for="nickname">Your Nickname:</label>
+        <input type="text" id="nickname" placeholder="Enter your nickname" required>
+    </div>
+    <div class="form-group animated-form">
+        <label for="message">Your Message:</label>
+        <textarea id="message" placeholder="Enter your message" required></textarea>
+    </div>
+    <button type="submit" id="submit-button">Submit</button>
+</form>
+<div class="container"> 
+    <div class="valentines"> 
+        <div class="envelope"> 
+            <div class="front"></div>
+            <div class="card"> 
+                <div class="text"> 
+                    <!-- Message will be inserted here -->
+                </div>
+                <div class="heart"></div>
+            </div>
+        </div>
+        <div id="nickname-below-envelope"></div> <!-- This element will hold the nickname -->
+    </div>
+    </div>
+        <!-- Display the nickname at the bottom of the envelope -->
+        <div class="nickname"></div>
+    </div>
+</div>
+<div id="qrcode"></div>
+<script>
+
+function hearts() {
+    const container = document.body; // Change to document.body to cover the entire page
+    const creat = document.createElement('div');
+    creat.classList.add('hearts');
+    creat.innerHTML = '🌸';
+    creat.style.left = Math.random() * window.innerWidth + 'px'; // Randomize horizontal position
+    creat.style.top = Math.random() * window.innerHeight + 'px'; // Randomize vertical position
+    creat.style.animationDuration = Math.random() * 2 + 3 + 's';
+    container.appendChild(creat);
+    setTimeout(() => {
+        creat.remove();
+    }, 3000);
+}
+
+setInterval(hearts, 100);
+
+    function showContent(id) {
+        document.getElementById(id).style.display = "block";
+    }
+
+    function hideContent(id) {
+        document.getElementById(id).style.display = "none";
+    }
+
+    function showContent(id) {
+        var content = document.getElementById(id);
+        content.classList.remove('hidden-content');
+    }
+
+    function hideContent(id) {
+        var content = document.getElementById(id);
+        content.classList.add('hidden-content');
+    }
+
+    function changeTheme(theme) {
+        // Remove existing theme class
+        document.body.classList.remove('dinosaur-theme', 'kuromi-theme', 'pixel-theme');
+        // Add the new theme class
+        document.body.classList.add(theme + "-theme");
+    }
+
+
+document.getElementById('message-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var nickname = document.getElementById('nickname').value;
+    var message = document.getElementById('message').value;
+    
+    // Update the text content of the card with the entered message
+    var cardText = document.querySelector('.card .text');
+    cardText.textContent = message;
+
+    // Update the nickname below the envelope
+    var nicknameElement = document.getElementById('nickname-below-envelope');
+    nicknameElement.textContent = "From: " + nickname;
+
+    // Show the envelope and card
+    document.getElementById('message-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var nickname = document.getElementById('nickname').value;
+            var message = document.getElementById('message').value;
+            
+            // Update the text content of the card with the entered message
+            var cardText = document.querySelector('.card .text');
+            cardText.textContent = message;
+
+            // Update the nickname below the envelope
+            var nicknameElement = document.getElementById('nickname-below-envelope');
+            nicknameElement.textContent = "From: " + nickname;
+
+            // Show the envelope and card
+            var envelope = document.querySelector('.envelope');
+            envelope.style.display = 'block';
+
+            // Generate QR code for the message
+            generateQRCode(message);
+
+    // Show the envelope and card
+    var envelope = document.querySelector('.envelope');
+    envelope.style.display = 'block';
+});
+});
+</script>
+<footer>
+    <p>&copy; 2024 QRoChain. All rights reserved.</p>
+</footer>
+</body>
+</html>
