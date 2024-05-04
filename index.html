@@ -84,6 +84,34 @@
 }
 
 setInterval(hearts, 100);
+
+function checkPassword() {
+
+        var passwordInput = document.getElementById("password");
+
+        var password = passwordInput.value;
+
+        var errorMessage = document.getElementById("error-message");
+
+        var proceedButton = document.getElementById("proceed-button");
+
+
+        if (password === "NITRO5") {
+
+            errorMessage.style.display = "none";
+
+            proceedButton.disabled = false;
+        } else {
+    
+            errorMessage.style.display = "block";
+
+            proceedButton.disabled = true;
+        }
+    }
+
+    function proceedToSite() {
+        window.location.href = "1-11.html";
+    }
     </script>
 </body>
 </html>
