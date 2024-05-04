@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="all.css">
+    <title>QRoChain Homepage</title>
+</head>
+<style>
+    body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('NEWBG.jpg');
+    background-attachment: fixed;
+    min-height: 100vh;
+    align-items: center;
+}
+</style>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <a href="#">
+                    <img id="logo" src="Picsart_24-04-26_09-58-33-239.png" alt="Logo">
+                </a>
+            </div>
+            <a href="#" onmouseover="showContent('about-us-content')" onmouseout="hideContent('about-us-content')">About Us</a>
+        <a href="#" onmouseover="showContent('contact-content')" onmouseout="hideContent('contact-content')">Contact</a>
+        </nav>
+    </header>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="about-container hidden-content" id="about-us-content">
+        <h2>About Us</h2>
+        <p>This is a brief description about our company...QRoChain integrates state-of-the-art encryption protocols to safeguard user data, ensuring each message exchange is not only convenient but also highly secure. With our commitment to advancing digital communication, QRoChain sets new standards for user privacy and technological innovation in the realm of personalized messaging. Experience the seamless fusion of modern convenience and robust security with QRoChain's QR code keychains, redefining how we connect in the digital age.</p>
+        <p>For more information, please visit our FB Page <a href="https://www.facebook.com/profile.php?id=61559021244202&mibextid=ZbWKwL">QRoChain</a>.</p>
+        <button onclick="hideContent('about-us-content')">Close</button>
+    </div>
+    
+    <div class="contact-container hidden-content" id="contact-content">
+        <h2>Contact</h2>
+        <p>For inquiries, please contact us at:</p>
+        <p>Email: 2022000321@lccm.edu.ph</p>
+        <p>Phone: 09085780379</p>
+        <button onclick="hideContent('contact-content')">Close</button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <center>
+        <div class="container22">
+            <div class="animated-photo">
+                <div class="image-container-left">
+                </div>
+                <div class="start-button-container">
+                    <a href="1-2.html"><button class="start-button">Start</button></a>
+                </div>
+                <div class="fb-page-button-container">
+                    <a href="https://www.facebook.com/profile.php?id=61559021244202&mibextid=ZbWKwL" target="_blank"><button class="fb-page-button">Visit FB Page</button></a>
+                </div>
+            </div>
+        </div>
+    </center>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+    </div>
+
+    <script src="all.js"></script>
+    <script>
+        function hearts() {
+    const container = document.body; 
+    const creat = document.createElement('div');
+    creat.classList.add('hearts');
+    creat.innerHTML = '🌸';
+    creat.style.left = Math.random() * window.innerWidth + 'px'; 
+    creat.style.top = Math.random() * window.innerHeight + 'px'; 
+    creat.style.animationDuration = Math.random() * 2 + 3 + 's';
+    container.appendChild(creat);
+    setTimeout(() => {
+        creat.remove();
+    }, 3000);
+}
+
+setInterval(hearts, 100);
+    </script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="all.css">
+<title>FLOWER THEME</title>
+<header>
+    <nav>
+        <nav>
+            <div class="logo-container">
+                <a href="#">
+                    <img id="logo" src="Picsart_24-04-26_09-58-33-239.png" alt="Logo">
+                </a>
+            </div>
+            <a href="#" onmouseover="showContent('about-us-content')" onmouseout="hideContent('about-us-content')">About Us</a>
+        <a href="#" onmouseover="showContent('contact-content')" onmouseout="hideContent('contact-content')">Contact</a>
+        </nav>
+    </nav>
+</header>
+<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="about-container hidden-content" id="about-us-content">
+        <h2>About Us</h2>
+        <p>This is a brief description about our company...QRoChain integrates state-of-the-art encryption protocols to safeguard user data, ensuring each message exchange is not only convenient but also highly secure. With our commitment to advancing digital communication, QRoChain sets new standards for user privacy and technological innovation in the realm of personalized messaging. Experience the seamless fusion of modern convenience and robust security with QRoChain's QR code keychains, redefining how we connect in the digital age.</p>
+        <p>For more information, please visit our FB Page <a href="https://www.facebook.com/profile.php?id=61559021244202&mibextid=ZbWKwL">QRoChain</a>.</p>
+        <button onclick="hideContent('about-us-content')">Close</button>
+    </div>
+    
+    <div class="contact-container hidden-content" id="contact-content">
+        <h2>Contact</h2>
+        <p>For inquiries, please contact us at:</p>
+        <p>Email: 2022000321@lccm.edu.ph</p>
+        <p>Phone: 09085780379</p>
+        <button onclick="hideContent('contact-content')">Close</button>
+    </div>
+<main>
+<style>
+    body {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #fae1dd;
+        font-family: Arial, sans-serif;
+    background-image: url('NEWBG.jpg');
+    background-attachment: fixed;
+    min-height: 100vh;
+    }
+    
+           
+    .container {
+            position: relative;
+            padding: 20px;
+            animation: breathe 3s ease-in-out infinite alternate; /* Adding breathing animation */
+        }
+        
+        .card {
+            position: relative;
+            width: 600px;
+            max-height: 450px; /* Added max-height to limit the card height */
+            overflow-y: auto; /* Added overflow-y to enable scrolling if needed */
+            background: white;
+            border-radius: 2px;
+            display: grid;
+            place-items: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: 1s;
+            padding: 20px; /* Added padding to the card */
+            margin: 10px; /* Added margin to the card */
+        }
+        
+        .card:before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 2px solid black;
+            border-style: dashed;
+        }
+        
+        .card .text {
+            font-family: 'Arial';
+            color: black;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        @keyframes breathe {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.05); /* Adjust scale value for breathing effect */
+            }
+        }
+
+    footer {
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #333;
+        color: white;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+    </style>
+</head>
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="about-container hidden-content" id="about-us-content">
+        <h2>About Us</h2>
+        <p>This is a brief description about our company...QRoChain integrates state-of-the-art encryption protocols to safeguard user data, ensuring each message exchange is not only convenient but also highly secure. With our commitment to advancing digital communication, QRoChain sets new standards for user privacy and technological innovation in the realm of personalized messaging. Experience the seamless fusion of modern convenience and robust security with QRoChain's QR code keychains, redefining how we connect in the digital age.</p>
+        <p>For more information, please visit our FB Page <a href="https://www.facebook.com/profile.php?id=61559021244202&mibextid=ZbWKwL">QRoChain</a>.</p>
+        <button onclick="hideContent('about-us-content')">Close</button>
+    </div>
+    
+    <div class="contact-container hidden-content" id="contact-content">
+        <h2>Contact</h2>
+        <p>For inquiries, please contact us at:</p>
+        <p>Email: 2022000321@lccm.edu.ph</p>
+        <p>Phone: 09085780379</p>
+        <button onclick="hideContent('contact-content')">Close</button>
+    </div>
+    <br><br><br>
+    <main>
+        <form class="cool-form" id="messageForm">
+            <h1>Welcome To the</h1>
+            <h1 id="title">
+                <span class="letter">Q</span>
+                <span class="letter">R</span>
+                <span class="letter">o</span>
+                <span class="letter">C</span>
+                <span class="letter">h</span>
+                <span class="letter">a</span>
+                <span class="letter">i</span>
+                <span class="letter">n</span>
+            </h1>
+            <p>Please Enter Your Nickname And Your Messages</p>
+            <div class="form-group animated-form">
+                <label for="nicknameInput">Nickname:</label>
+                <input type="text" id="nicknameInput" name="nickname" placeholder="Enter your nickname" required>
+            </div>
+            <div class="form-group animated-form">
+                <label for="messageInput">Message:</label>
+                <textarea id="messageInput" name="message" placeholder="Enter your message" required></textarea>
+            </div>
+            <div class="form-group animated-form">
+                <label for="dateInput">Date:</label>
+                <input type="text" id="dateInput" name="date" value="04-05-2024" readonly>
+            </div>
+
+            <button type="submit">Submit</button>
+
+        </form>   
+    </main>
+<div class="container">
+    <div class="card">
+        <p id="datePlaceholder"></p>
+        <p id="nicknamePlaceholder"></p>
+        <p id="messagePlaceholder"></p>
+    </div>
+</div>
+<script src="all.js"></script>
+    <script>
+        const messageForm = document.getElementById('messageForm');
+
+messageForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Get form values
+    const date = document.getElementById('dateInput').value;
+    const nickname = document.getElementById('nicknameInput').value;
+    const message = document.getElementById('messageInput').value;
+
+    // Update localStorage with form values
+    localStorage.setItem('date', date);
+    localStorage.setItem('nickname', nickname);
+    localStorage.setItem('message', message);
+
+    // Update card with form values
+    document.getElementById('datePlaceholder').innerText = `Date: ${date}`;
+    document.getElementById('nicknamePlaceholder').innerText = `Nickname: ${nickname}`;
+    document.getElementById('messagePlaceholder').innerText = `Message: ${message}`;
+
+    // Reset form
+    messageForm.reset();
+});
+
+
+        function hearts() {
+    const container = document.body; 
+    const creat = document.createElement('div');
+    creat.classList.add('hearts');
+    creat.innerHTML = '🌸';
+    creat.style.left = Math.random() * window.innerWidth + 'px'; 
+    creat.style.top = Math.random() * window.innerHeight + 'px'; 
+    creat.style.animationDuration = Math.random() * 2 + 3 + 's';
+    container.appendChild(creat);
+    setTimeout(() => {
+        creat.remove();
+    }, 3000);
+}
+
+setInterval(hearts, 100);
+    </script>
+
+</body>
+<footer>
+    <p>&copy; 2024 QRoChain. All rights reserved.</p>
+</footer>
+</html>
