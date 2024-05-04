@@ -19,22 +19,22 @@
         .container {
             position: relative;
             padding: 20px;
-            animation: breathe 3s ease-in-out infinite alternate; /* Adding breathing animation */
+            animation: breathe 3s ease-in-out infinite alternate;
         }
         
         .card {
             position: relative;
             width: 600px;
-            max-height: 450px; /* Added max-height to limit the card height */
-            overflow-y: auto; /* Added overflow-y to enable scrolling if needed */
+            max-height: 450px; 
+            overflow-y: auto; 
             background: white;
             border-radius: 2px;
             display: grid;
             place-items: center;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             transition: 1s;
-            padding: 20px; /* Added padding to the card */
-            margin: 10px; /* Added margin to the card */
+            padding: 20px; 
+            margin: 10px;
         }
         
         .card:before {
@@ -60,7 +60,7 @@
                 transform: scale(1);
             }
             100% {
-                transform: scale(1.05); /* Adjust scale value for breathing effect */
+                transform: scale(1.05); 
             }
         }
     </style>
